@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace connector.infrastructure
+namespace mc.data.infrastructure
 {
     public class Configuration
     {

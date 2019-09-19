@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace connector.infrastructure.Interfaces
+namespace mc.data.infrastructure
 {
     public interface IRepository<T> where T : IEntity
     {

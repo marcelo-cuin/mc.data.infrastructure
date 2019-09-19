@@ -1,12 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using connector.infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace connector.infrastructure
+namespace mc.data.infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -16,7 +15,7 @@ namespace connector.infrastructure
         private const string DATABASE_ORACLE = "ORACLE";
 
         public DbContext Context { get => _dbContext; }
-        public string ConnectionStringName { get => throw new NotImplementedException(); }
+        public virtual string ConnectionStringName { get => throw new NotImplementedException(); }
 
         public UnitOfWork(IConfiguration configuration)
         {

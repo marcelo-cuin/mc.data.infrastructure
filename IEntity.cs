@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace connector.infrastructure.Interfaces
+namespace mc.data.infrastructure
 {
     public abstract class IEntity
     {

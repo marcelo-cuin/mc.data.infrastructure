@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using connector.infrastructure.Interfaces;
+using mc.data.infrastructure;
 
-namespace connector.infrastructure
+namespace mc.data.infrastructure
 {
     public class EntityBase : IEntity
     {
@@ -17,22 +17,13 @@ namespace connector.infrastructure
 
         [Required]
         [DataType(DataType.DateTime)]
-        [Column("timestamp")]
-        public DateTime Timestamp { get; set; }
-
-        [NotMapped]
-        public DateTime TimestampUTC
-        {
-            get
-            {
-                return this.Timestamp.ToLocalTime().ToUniversalTime();
-            }
-        }
+        [Column("createdon")]
+        public DateTime CreatedOn { get; set; }
 
         public EntityBase()
         {
             this.RecId = Guid.NewGuid();
-            this.Timestamp = DateTime.UtcNow;
+            this.CreatedOn = DateTime.UtcNow;
         }
     }
 }

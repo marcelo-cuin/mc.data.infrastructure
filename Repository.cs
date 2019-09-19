@@ -6,9 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.Extensions.Configuration;
-using connector.infrastructure.Interfaces;
 
-namespace connector.infrastructure
+namespace mc.data.infrastructure
 {
     public class Repository<T> : IRepository<T> where T : IEntity
     {
