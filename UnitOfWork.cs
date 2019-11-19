@@ -43,6 +43,7 @@ namespace mc.data.infrastructure
                     builder.UseSqlServer(database.connectionString, mssql =>
                     {
                         mssql.CommandTimeout(60);
+                        mssql.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
                     });
                     break;
             }
