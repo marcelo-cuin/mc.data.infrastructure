@@ -46,6 +46,13 @@ namespace mc.data.infrastructure
                         mssql.EnableRetryOnFailure(maxRetryCount: 10, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
                     });
                     break;
+
+                case DATABASE_ORACLE:
+                    builder.UseOracle(database.connectionString, oracle =>
+                    {
+                        oracle.CommandTimeout(60);
+                    });
+                    break;
             }
 
             _dbContext = this.OnCreatingContext(builder.Options).Result;
