@@ -50,7 +50,7 @@ namespace mc.data.infrastructure
                 case DATABASE_ORACLE:
                     builder.UseOracle(database.connectionString, oracle =>
                     {
-                        oracle.CommandTimeout(60);
+                        oracle.CommandTimeout(600);
                     });
                     break;
             }
